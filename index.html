@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gijón Felino · Protectora de gatos en Gijón: colonias, plan CER y adopción</title>
+  <meta name="description" content="Asociación protectora de gatos en Gijón. Cuidamos las colonias felinas, esterilizamos con el plan CER y buscamos hogar a los gatos que no pueden volver a la calle.">
+  <meta name="theme-color" content="#111311">
+  <meta property="og:title" content="Gijón Felino · Damos visibilidad a los invisibles">
+  <meta property="og:description" content="Cuidamos las colonias felinas de Gijón y buscamos hogar a los gatos que ya no pueden volver a la calle.">
+  <!-- PENDIENTE: og:image 1200×630 cuando haya fotos reales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Quicksand:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout_general.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Dibujo de gato reutilizable (estilo del logo). Provisional hasta tener fotos reales. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="gato" viewBox="0 0 100 100">
+      <path d="M17 46 L22 13 L44 31 Z" fill="var(--pelo)"/>
+      <path d="M83 46 L78 13 L56 31 Z" fill="var(--pelo)"/>
+      <path d="M24 22 L26 34 L35 31 Z" fill="#E79AB4"/>
+      <path d="M76 22 L74 34 L65 31 Z" fill="#E79AB4"/>
+      <ellipse cx="50" cy="58" rx="35" ry="30" fill="var(--pelo)"/>
+      <path d="M50 38 C44 50 34 62 36 74 C40 86 60 86 64 74 C66 62 56 50 50 38 Z" fill="var(--mancha)"/>
+      <g class="ojo"><ellipse cx="36" cy="55" rx="9" ry="9.5" fill="#fff"/><circle cx="36" cy="55" r="7.2" fill="#98C020"/><ellipse cx="36" cy="55" rx="2.2" ry="5.6" fill="#1C1C1A"/><circle cx="38.5" cy="51.5" r="1.8" fill="#fff"/></g>
+      <g class="ojo"><ellipse cx="64" cy="55" rx="9" ry="9.5" fill="#fff"/><circle cx="64" cy="55" r="7.2" fill="#98C020"/><ellipse cx="64" cy="55" rx="2.2" ry="5.6" fill="#1C1C1A"/><circle cx="66.5" cy="51.5" r="1.8" fill="#fff"/></g>
+      <path d="M46 67 L54 67 L50 72 Z" fill="#E79AB4"/>
+      <path d="M50 72 Q50 77 45 77 M50 72 Q50 77 55 77" stroke="#1C1C1A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <path d="M30 70 L10 67 M30 74 L11 76 M70 70 L90 67 M70 74 L89 76" stroke="#bdb8ad" stroke-width="1" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ojos" viewBox="0 0 60 20">
+      <path d="M2 10 Q12 0 22 10 Q12 20 2 10 Z" fill="#98C020"/><ellipse cx="12" cy="10" rx="1.6" ry="4.4" fill="#111311"/>
+      <path d="M38 10 Q48 0 58 10 Q48 20 38 10 Z" fill="#98C020"/><ellipse cx="48" cy="10" rx="1.6" ry="4.4" fill="#111311"/>
+    </symbol>
+  </svg>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="logo" href="index.html" aria-label="Gijón Felino, inicio">
+        <!-- PENDIENTE: sustituir por el logo oficial en SVG (assets/img/marca/) -->
+        <svg class="arco-mini" viewBox="0 0 40 40" aria-hidden="true"><path d="M33 9 A16 16 0 1 0 36 26" fill="none" stroke="#98C020" stroke-width="6" stroke-linecap="round"/><use href="#ojos" x="11" y="16" width="18" height="6"/></svg>
+        <span class="nombre">Gijón<span>FELINO</span></span>
+      </a>
+      <button class="menu-boton" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="adopta.html">Adopta</a></li>
+          <li><a href="colabora.html">Colabora</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+        </ul>
+      </nav>
+      <a class="boton boton--primario magnetico" href="colabora.html">Quiero colaborar</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ 1 · HERO con linterna ============ -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="noche" aria-hidden="true">
+        <div class="ojos-capa">
+          <svg class="par" style="--px:14%;--py:18%;--t:4.8s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:78%;--py:22%;--t:6.2s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:90%;--py:48%;--t:5.4s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:62%;--py:40%;--t:7.1s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:34%;--py:58%;--t:5.9s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:8%;--py:72%;--t:6.6s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:84%;--py:80%;--t:4.4s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:50%;--py:16%;--t:5.1s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+          <svg class="par" style="--px:68%;--py:66%;--t:6.9s" viewBox="0 0 60 20"><use href="#ojos"/></svg>
+        </div>
+        <div class="luz"></div>
+      </div>
+
+      <div class="contenedor hero-contenido">
+        <p class="etiqueta">Asociación protectora · Gijón</p>
+        <h1 id="hero-titulo" class="titulo" data-split>Damos visibilidad <em>a los invisibles</em></h1>
+        <p class="subtitulo">Viven en los solares y los bajos de Gijón y casi nadie los ve. Nosotros sí: cuidamos sus colonias, los esterilizamos y les buscamos hogar.</p>
+        <div class="acciones">
+          <a class="boton boton--primario magnetico" href="colabora.html">Quiero colaborar <span class="flecha" aria-hidden="true">→</span></a>
+          <a class="boton boton--secundario" href="adopta.html">Ver gatos en adopción</a>
+        </div>
+        <p class="pista" aria-hidden="true"><span class="punto"></span><span class="raton">Mueve la luz: hay más de los que crees</span><span class="dedo">Toca o baja: hay más de los que crees</span></p>
+      </div>
+    </section>
+
+    <!-- ============ 2 · CIFRAS (APARCADA: datos pendientes) ============ -->
+    <section class="cifras" aria-labelledby="cifras-titulo">
+      <div class="contenedor">
+        <h2 id="cifras-titulo" class="titulo">Tu ayuda se ve.</h2>
+        <p class="intro">Cada euro es pienso, una castración o una urgencia veterinaria pagada esta semana.</p>
+        <ul class="lista-cifras" role="list">
+          <!-- DATO PENDIENTE: pedir los números reales a la asociación. Si no los hay, se borra la sección entera. -->
+          <li data-reveal><strong class="numero">00</strong><span>colonias cuidadas</span> <span class="provisional">DATO PENDIENTE</span></li>
+          <li data-reveal><strong class="numero">000</strong><span>gatos esterilizados</span> <span class="provisional">DATO PENDIENTE</span></li>
+          <li data-reveal><strong class="numero">00</strong><span>adopciones</span> <span class="provisional">DATO PENDIENTE</span></li>
+          <li data-reveal><strong class="numero">2015</strong><span>registrados desde</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3 · QUÉ HACEMOS ============ -->
+    <section class="que-hacemos" aria-labelledby="que-titulo">
+      <div class="contenedor">
+        <p class="etiqueta">Lo que hacemos</p>
+        <h2 id="que-titulo" class="titulo" data-split>Plan CER, no abandono.</h2>
+        <div class="bento">
+          <article class="tarjeta tarjeta--cer" data-reveal>
+            <h3>Plan CER</h3>
+            <p>Capturar, esterilizar y retornar a su colonia. Es lo único que reduce las colonias de verdad. Sin sacrificios, sin parches.</p>
+            <ol class="pasos">
+              <li><span>1</span>Captura</li>
+              <li><span>2</span>Esterilización</li>
+              <li><span>3</span>Retorno</li>
+            </ol>
+          </article>
+          <article class="tarjeta" data-reveal>
+            <h3>Colonias</h3>
+            <p>Alimentamos y vigilamos las colonias felinas de la ciudad, con voluntarios del barrio.</p>
+          </article>
+          <article class="tarjeta" data-reveal>
+            <h3>Rescate y veterinario</h3>
+            <p>Recogemos gatos heridos o en peligro y pagamos su atención veterinaria.</p>
+          </article>
+          <article class="tarjeta tarjeta--adopta" data-reveal>
+            <h3>Adopciones</h3>
+            <p>Buscamos casa a los gatos que ya no pueden volver a la calle.</p>
+            <a class="enlace" href="adopta.html">Ver gatos en adopción →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · GATOS: muro de retratos (momento wow) ============ -->
+    <section class="gatos" aria-labelledby="gatos-titulo">
+      <div class="muro-escena">
+        <div class="muro" aria-hidden="true">
+          <!-- Retratos ilustrados PROVISIONALES: sustituir por fotos reales de los gatos (assets/img/gatos/) -->
+          <div class="retrato" style="--pelo:#1C1C1A;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#D98A3D;--mancha:#F4E3CC"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#7C7A74;--mancha:#7C7A74"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#1C1C1A;--mancha:#1C1C1A"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#A8724A;--mancha:#EADBC6"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#4B4945;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#E7A55A;--mancha:#E7A55A"><svg><use href="#gato"/></svg></div>
+          <div class="retrato retrato--centro" style="--pelo:#1C1C1A;--mancha:#F7F5EF"><svg><use href="#gato"/></svg><span class="arco"></span></div>
+          <div class="retrato" style="--pelo:#9A9890;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#5B3A29;--mancha:#C98A4E"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#E9E4DA;--mancha:#E9E4DA"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#1C1C1A;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#C7773A;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#6E6C66;--mancha:#6E6C66"><svg><use href="#gato"/></svg></div>
+          <div class="retrato" style="--pelo:#2A2826;--mancha:#E7A55A"><svg><use href="#gato"/></svg></div>
+        </div>
+        <div class="muro-texto contenedor">
+          <p class="etiqueta">Gatos en adopción</p>
+          <h2 id="gatos-titulo" class="titulo">Cada uno tiene nombre.</h2>
+          <p>Adopción responsable, no impulso: contrato, microchip, esterilización, vacunas y test. Un gato no es un regalo de Navidad.</p>
+        </div>
+      </div>
+
+      <div class="contenedor fichas">
+        <!-- FICHAS PROVISIONALES: nombres y datos de ejemplo hasta tener los gatos reales disponibles -->
+        <a class="ficha" href="gato.html" data-reveal>
+          <div class="retrato" style="--pelo:#1C1C1A;--mancha:#F7F5EF"><svg><use href="#gato"/></svg></div>
+          <span class="estado estado--disponible">Disponible</span>
+          <h3>[Nombre] <span class="provisional">PROVISIONAL</span></h3>
+          <p>Adulta · hembra · tranquila y muy de sofá.</p>
+        </a>
+        <a class="ficha" href="gato.html" data-reveal>
+          <div class="retrato" style="--pelo:#D98A3D;--mancha:#F4E3CC"><svg><use href="#gato"/></svg></div>
+          <span class="estado estado--disponible">Disponible</span>
+          <h3>[Nombre] <span class="provisional">PROVISIONAL</span></h3>
+          <p>Cachorro · macho · curioso, juega con todo.</p>
+        </a>
+        <a class="ficha" href="gato.html" data-reveal>
+          <div class="retrato" style="--pelo:#7C7A74;--mancha:#7C7A74"><svg><use href="#gato"/></svg></div>
+          <span class="estado estado--reservado">Reservado</span>
+          <h3>[Nombre] <span class="provisional">PROVISIONAL</span></h3>
+          <p>Adulto · macho · tímido al principio, fiel después.</p>
+        </a>
+      </div>
+      <div class="contenedor centrado">
+        <a class="boton boton--secundario" href="adopta.html">Conoce a los que buscan casa <span class="flecha" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ 5 · CÓMO AYUDAR ============ -->
+    <section class="como-ayudar" aria-labelledby="ayudar-titulo">
+      <div class="contenedor">
+        <div class="row g-4 align-items-end cabeza">
+          <div class="col-lg-7">
+            <p class="etiqueta">Colabora</p>
+            <h2 id="ayudar-titulo" class="titulo" data-split>Ayudar es más fácil de lo que crees.</h2>
+          </div>
+          <div class="col-lg-5">
+            <p>No tenemos albergue ni subvenciones: todo sale de gente como tú. Elige cómo.</p>
+          </div>
+        </div>
+        <ol class="vias" role="list">
+          <li class="via via--destacada" data-reveal>
+            <span class="num">01</span>
+            <div><h3>Hazte socio</h3><p>Una cuota fija al mes es lo que más estabilidad nos da: sabemos con qué contamos para castraciones y pienso.</p></div>
+            <a class="boton boton--primario" href="colabora.html#socio">Hazte socio</a>
+          </li>
+          <li class="via" data-reveal>
+            <span class="num">02</span>
+            <div><h3>Bizum</h3><p>Un donativo puntual en segundos. <span class="provisional">Nº BIZUM PENDIENTE</span></p></div>
+            <a class="enlace" href="colabora.html#bizum">Donar por Bizum →</a>
+          </li>
+          <li class="via" data-reveal>
+            <span class="num">03</span>
+            <div><h3>Apadrina una colonia</h3><p>Tu aportación va a una colonia concreta de Gijón.</p></div>
+            <a class="enlace" href="colabora.html#apadrina">Apadrina una colonia →</a>
+          </li>
+          <li class="via" data-reveal>
+            <span class="num">04</span>
+            <div><h3>Acoge o echa una mano</h3><p>Casa de acogida, coche para llevar gatos al veterinario o dos horas al mes.</p></div>
+            <a class="enlace" href="colabora.html#voluntariado">Quiero ser voluntario →</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 6 · NOTICIAS (PROVISIONAL) ============ -->
+    <section class="noticias" aria-labelledby="noticias-titulo">
+      <div class="contenedor">
+        <div class="cabeza">
+          <h2 id="noticias-titulo" class="titulo">Lo último de las colonias</h2>
+          <a class="enlace" href="noticias.html">Todas las noticias →</a>
+        </div>
+        <!-- NOTICIAS PROVISIONALES: se sustituyen por publicaciones reales de la asociación -->
+        <div class="row g-4">
+          <div class="col-md-4" data-reveal>
+            <a class="noticia" href="noticia.html">
+              <div class="miniatura" style="--pelo:#1C1C1A;--mancha:#F7F5EF"><svg viewBox="0 0 100 100"><use href="#gato"/></svg></div>
+              <span class="provisional">PROVISIONAL</span>
+              <h3>[Titular de noticia sobre una colonia]</h3>
+            </a>
+          </div>
+          <div class="col-md-4" data-reveal>
+            <a class="noticia" href="noticia.html">
+              <div class="miniatura" style="--pelo:#D98A3D;--mancha:#F4E3CC"><svg viewBox="0 0 100 100"><use href="#gato"/></svg></div>
+              <span class="provisional">PROVISIONAL</span>
+              <h3>[Titular sobre una adopción con final feliz]</h3>
+            </a>
+          </div>
+          <div class="col-md-4" data-reveal>
+            <a class="noticia" href="noticia.html">
+              <div class="miniatura" style="--pelo:#7C7A74;--mancha:#7C7A74"><svg viewBox="0 0 100 100"><use href="#gato"/></svg></div>
+              <span class="provisional">PROVISIONAL</span>
+              <h3>[Titular sobre una jornada de esterilización]</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7 · CTA FINAL ============ -->
+    <section class="cta-final" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <h2 id="cta-titulo" class="titulo" data-split>Cuidamos las colonias de Gijón. Contigo llegamos a más.</h2>
+        <p>Esterilizamos, curamos y buscamos hogar a los gatos que ya no pueden volver a la calle.</p>
+        <a class="boton boton--negro magnetico" href="colabora.html">Quiero colaborar <span class="flecha" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="rejilla">
+        <div>
+          <p class="lema">Damos visibilidad a los invisibles.</p>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="mailto:gijonfelino@yahoo.es">gijonfelino@yahoo.es</a></li>
+            <li><a href="tel:+34653670132">653 670 132</a></li>
+            <li>Calle Río de Oro, 32B<br>Gijón (Asturias)</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Síguenos</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/gijon_felino/" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/asociaciongijonfelino/" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>La web</h2>
+          <ul>
+            <li><a href="adopta.html">Adopta</a></li>
+            <li><a href="colabora.html">Colabora</a></li>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="gigante" aria-hidden="true">Gijón <span>Felino</span></p>
+      <div class="legal">
+        <span>© Asociación Protectora de Animales Gijón Felino</span>
+        <a href="#">Aviso legal</a>
+        <a href="#">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/animaciones.js" defer></script>
+</body>
+</html>

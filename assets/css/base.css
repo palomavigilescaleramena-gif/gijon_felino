@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Base: reset, tipografía, utilidades, accesibilidad
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-texto);
+  font-size: var(--fs-texto);
+  line-height: var(--lh-texto);
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 {
+  font-family: var(--font-titular);
+  font-weight: 700;
+  line-height: var(--lh-titular);
+  letter-spacing: var(--tracking-titular);
+  text-wrap: balance;
+}
+p { max-width: var(--ancho-texto); text-wrap: pretty; }
+a { color: inherit; }
+ul[role="list"] { list-style: none; padding: 0; }
+
+:focus-visible { outline: 3px solid var(--color-primario-texto); outline-offset: 3px; border-radius: 4px; }
+
+.saltar { position: absolute; left: -9999px; }
+.saltar:focus { left: 1rem; top: 1rem; z-index: 1000; background: var(--color-fondo); padding: .5rem 1rem; }
+
+.visualmente-oculto {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.contenedor { width: min(100% - 2 * var(--gutter), var(--ancho-max)); margin-inline: auto; }
+
+/* Etiqueta pequeña, como «FELINO» del logo */
+.etiqueta {
+  display: inline-block;
+  font-family: var(--font-titular);
+  font-weight: 600;
+  font-size: var(--fs-peque);
+  letter-spacing: var(--tracking-etiqueta);
+  text-transform: uppercase;
+  color: var(--color-primario-texto);
+}
+
+/* Marca de dato pendiente: bien visible mientras no haya dato real */
+.provisional {
+  background: repeating-linear-gradient(45deg, #fff3b0 0 8px, #ffe98a 8px 16px);
+  color: var(--marca-negro);
+  font-size: .75rem; font-weight: 700; letter-spacing: .04em;
+  padding: .1em .45em; border-radius: 4px; vertical-align: middle;
+}
+
+/* Elementos que se animan: solo se esconden si hay JS */
+.js [data-reveal] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .js [data-reveal] { opacity: 1; }
+}
+
+/* Máscara de SplitText: deja sitio a las letras con rabo (g, j, p, y) */
+[data-split] > div { padding-bottom: .14em; margin-bottom: -.14em; }

@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Comunes a todas las páginas: botones, cabecera, menú, arco, retrato, pie
+   ========================================================================== */
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex; align-items: center; gap: .6em;
+  font-family: var(--font-titular); font-weight: 700; font-size: 1.0625rem;
+  text-decoration: none; line-height: 1;
+  padding: 1em 1.5em; border-radius: var(--radio-pildora);
+  border: 2px solid transparent;
+  transition: background-color var(--dur-rapida), color var(--dur-rapida), border-color var(--dur-rapida), transform var(--dur-rapida) var(--ease-salida);
+}
+.boton:active { transform: scale(.97); }
+.boton--primario { background: var(--color-primario); color: var(--color-sobre-primario); }
+.boton--primario:hover { background: var(--marca-negro); color: var(--color-primario); }
+.boton--secundario { border-color: currentColor; color: inherit; background: transparent; }
+.boton--secundario:hover { background: var(--marca-negro); border-color: var(--marca-negro); color: var(--color-fondo); }
+.boton .flecha { transition: transform var(--dur-rapida) var(--ease-salida); }
+.boton:hover .flecha { transform: translateX(4px); }
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  padding-block: .85rem;
+  transition: background-color var(--dur-media), color var(--dur-media), box-shadow var(--dur-media);
+  color: var(--color-sobre-noche);
+}
+.cabecera.bajando { background: rgb(17 19 17 / .9); backdrop-filter: blur(10px); }
+.cabecera.solida { background: rgb(247 245 239 / .92); color: var(--color-texto); box-shadow: var(--sombra-s); backdrop-filter: blur(10px); }
+.cabecera .contenedor { display: flex; align-items: center; gap: 1rem; }
+
+.logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; margin-right: auto; }
+.logo .arco-mini { width: 34px; height: 34px; }
+.logo .nombre { font-family: var(--font-titular); font-weight: 700; font-size: 1.35rem; letter-spacing: -.01em; line-height: 1; }
+.logo .nombre span { display: block; font-weight: 500; font-size: .62rem; letter-spacing: .38em; margin-top: .2rem; }
+
+.menu-boton {
+  font: 700 1rem var(--font-titular); color: inherit;
+  background: transparent; border: 2px solid currentColor; border-radius: var(--radio-pildora);
+  padding: .55em 1em; cursor: pointer;
+}
+.menu { display: none; }
+.menu.abierto {
+  display: block; position: fixed; inset: 0; z-index: -1;
+  background: var(--color-noche); color: var(--color-sobre-noche);
+  padding: 6.5rem var(--gutter) 2rem;
+}
+.menu ul { list-style: none; padding: 0; display: grid; gap: .4rem; }
+.menu a { font-family: var(--font-titular); font-weight: 700; font-size: clamp(2rem, 8vw, 3rem); text-decoration: none; }
+.menu a:hover, .menu a[aria-current="page"] { color: var(--color-primario); }
+.cabecera .boton--primario { display: none; padding: .8em 1.2em; font-size: .95rem; }
+
+/* Sin JS el menú se ve como lista normal */
+html:not(.js) .menu-boton { display: none; }
+html:not(.js) .menu { display: block; }
+html:not(.js) .menu ul { display: flex; flex-wrap: wrap; gap: 1rem; }
+html:not(.js) .menu a { font-size: 1rem; }
+
+@media (min-width: 992px) {
+  .menu-boton { display: none; }
+  .menu, .menu.abierto { display: block; position: static; background: none; padding: 0; color: inherit; z-index: auto; }
+  .menu ul { display: flex; gap: 1.6rem; }
+  .menu a { font-size: 1rem; position: relative; }
+  .menu a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--color-primario); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-media) var(--ease-salida); }
+  .menu a:hover::after, .menu a[aria-current="page"]::after { transform: scaleX(1); }
+  .menu a:hover { color: inherit; }
+  .cabecera .boton--primario { display: inline-flex; }
+}
+
+/* ---------- Rasgo propio: el arco verde del logo ---------- */
+.arco {
+  position: absolute; inset: calc(var(--arco-grosor) * -1.6);
+  border: var(--arco-grosor) solid var(--color-primario);
+  border-right-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-40deg);
+  pointer-events: none;
+}
+
+/* ---------- Retrato de gato (provisional hasta tener fotos reales) ---------- */
+.retrato {
+  --pelo: #1C1C1A; --mancha: #F7F5EF; --fondo-retrato: var(--color-superficie);
+  position: relative; aspect-ratio: 1; border-radius: 50%;
+  background: var(--fondo-retrato);
+}
+.retrato svg { width: 100%; height: 100%; }
+.retrato img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* ---------- Pie ---------- */
+.pie { background: var(--color-noche); color: var(--color-sobre-noche); padding-block: var(--space-l) var(--space-m); overflow: hidden; }
+.pie .rejilla { display: grid; gap: var(--space-m); }
+.pie h2 { font-size: var(--fs-peque); letter-spacing: var(--tracking-etiqueta); text-transform: uppercase; color: var(--color-primario); font-weight: 600; margin-bottom: .8rem; }
+.pie ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.pie a { text-decoration: none; }
+.pie a:hover { color: var(--color-primario); text-decoration: underline; text-underline-offset: 4px; }
+.pie .lema { font-family: var(--font-titular); font-weight: 700; font-size: var(--fs-h3); line-height: 1.1; max-width: 18ch; }
+.pie .gigante {
+  font-family: var(--font-titular); font-weight: 700; line-height: .8;
+  font-size: clamp(4rem, 17vw, 17rem); letter-spacing: -.05em;
+  margin-top: var(--space-l); white-space: nowrap; color: #2b302a;
+}
+.pie .gigante span { color: var(--color-primario); }
+.pie .legal { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: var(--space-s); font-size: var(--fs-peque); color: #a7a59d; }
+@media (min-width: 768px) {
+  .pie .rejilla { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+}
+
+/* ---------- Lenis: control del scroll ---------- */
+/* Sobrescribe el scroll nativo de Bootstrap para que Lenis tome el control */
+html.lenis, html.lenis body {
+  height: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important; /* Desactiva el smooth nativo de Bootstrap */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

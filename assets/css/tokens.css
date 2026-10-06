@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Tokens · Gijón Felino
+   Colores sacados del logo (verde, negro, piel). Contrastes comprobados:
+   texto/fondo 15.7:1 · texto-suave/fondo 6.6:1 · verde-oscuro/fondo 5.6:1
+   negro sobre verde 8.0:1 · verde sobre noche 8.8:1 · crema sobre noche 15.5:1
+   ⚠️ El verde de marca NUNCA va como texto sobre fondo claro (1.95:1).
+   ========================================================================== */
+:root {
+  /* Marca (exactos del logo) */
+  --marca-verde: #98C020;
+  --marca-negro: #1C1C1A;
+  --marca-piel:  #F4C2A3;
+  --marca-rosa:  #E79AB4;
+
+  /* Papeles */
+  --color-fondo: #F7F5EF;          /* papel cálido */
+  --color-superficie: #EDE8DC;     /* bloques, tarjetas */
+  --color-texto: var(--marca-negro);
+  --color-texto-suave: #5A574F;
+  --color-primario: var(--marca-verde);
+  --color-primario-texto: #4C6B0C; /* verde legible sobre claro: enlaces, etiquetas */
+  --color-acento: var(--marca-verde);
+  --color-sobre-primario: var(--marca-negro);
+  --color-borde: #D9D2C3;
+  --color-noche: #111311;
+  --color-sobre-noche: #EDEAE2;
+
+  /* Tipografía (lo más parecido al logo, legible) */
+  --font-titular: "Quicksand", "Nunito Sans", system-ui, sans-serif;
+  --font-texto: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-hero:  clamp(3rem, 1.4rem + 8vw, 9rem);
+  --fs-h1:    clamp(2.5rem, 1.6rem + 4.5vw, 6rem);
+  --fs-h2:    clamp(2rem, 1.4rem + 3vw, 4rem);
+  --fs-h3:    clamp(1.35rem, 1.1rem + 1.2vw, 2rem);
+  --fs-texto: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --fs-peque: 0.9375rem;
+  --lh-titular: 0.98;
+  --lh-texto: 1.6;
+  --tracking-titular: -0.025em;
+  --tracking-etiqueta: 0.16em;   /* como «FELINO» del logo */
+
+  /* Espacio */
+  --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-s:  clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-m:  clamp(2rem, 1.5rem + 2vw, 3rem);
+  --space-l:  clamp(4rem, 3rem + 5vw, 8rem);
+  --space-xl: clamp(5rem, 3.5rem + 8vw, 11rem);
+  --ancho-texto: 62ch;
+  --ancho-max: 1320px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+
+  /* Forma: redonda como el logo */
+  --radio-s: 10px;
+  --radio-m: 22px;
+  --radio-l: 40px;
+  --radio-pildora: 999px;
+  --arco-grosor: clamp(6px, 0.4rem + 0.4vw, 12px);
+  --sombra-s: 0 2px 10px rgb(28 28 26 / 0.06);
+  --sombra-m: 0 18px 40px -18px rgb(28 28 26 / 0.25);
+
+  /* Movimiento */
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-entrada-salida: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-rapida: 200ms;
+  --dur-media: 500ms;
+  --dur-lenta: 1200ms;
+}
